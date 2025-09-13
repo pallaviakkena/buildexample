@@ -1,9 +1,19 @@
 version: 0.2
 
-phases: install: runtime-versions: java: corretto11
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
 
-build: commands: - mvn clean install
+  build:
+    commands:
+      - mvn clean install
 
-post_build: commands: - echo "Build complete"
+  post_build:
+    commands:
+      - echo "Build complete"
+      - ls -lh target/   # Optional: lists files in target folder
 
-artifacts: files: - target/*.jar
+artifacts:
+  files:
+    - target/*.jar
