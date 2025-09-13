@@ -7,12 +7,15 @@ phases:
 
   build:
     commands:
-      - mvn clean install
+      - echo "Creating dummy artifact..."
+      - mkdir -p target
+      - echo "Hello, CodeBuild!" > target/hello.txt
 
   post_build:
     commands:
       - echo "Build complete"
+      - ls -lh target/   # Lists files in target
 
 artifacts:
   files:
-    - target/*.jar
+    - target/*
