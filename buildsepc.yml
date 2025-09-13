@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11        # Use Amazon Corretto Java 11
+
+  build:
+    commands:
+      - mvn clean install     # Compile + package app
+
+  post_build:
+    commands:
+      - echo "Build complete" # Print message after build
+
+artifacts:
+  files:
+    - target/*.jar            # Upload every JAR from target/ to S3
