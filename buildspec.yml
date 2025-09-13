@@ -12,7 +12,6 @@ phases:
   post_build:
     commands:
       - echo "Build complete"
-      - ls -lh target/   # Optional: lists files in target folder
 
 artifacts:
   files:
